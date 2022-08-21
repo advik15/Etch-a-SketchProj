@@ -1,0 +1,24 @@
+#container
+{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    height: 520px;
+    width: 512px;
+    border-width: 5px;
+    border-color: black;
+    border-style: solid;
+}
+.content
+{
+    background-color: rgb(235, 230, 230);
+    height: 30px;
+    width: 30px;
+    margin: 1px;
+    
+
+}
+.color
+{
+    background-color: aqua;
+}
