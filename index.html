@@ -8,27 +8,55 @@
     <link rel = "stylesheet" href = "style.css">
 </head>
 <body>
-    <div id = "container"> </div>
+    <div id = "main">
+        <div id = "container"></div>
+        <div id = "button_container"></div>
+    </div>
+   
 
     <script>
         const container = document.querySelector("#container");
-        for(let i =0;i<16;i++)
+        const button_container = document.querySelector("#button_container");
+        let numButton = document.createElement("button");
+        numButton.textContent = "Clear";
+        let numsquares = 16;
+        newGrid(numsquares);
+        button_container.appendChild(numButton);
+        numButton.addEventListener("click",event =>{
+             numsquares = prompt("Please enter the number of squares per side for the new grid",16)
+             newGrid(numsquares);
+        });
+
+        function newGrid(numsquares)
         {
-            for(let i =0;i<16;i++)
+            for(let i =0;i<item.length;i++)
             {
-            const grid = document.createElement("div");
-            grid.classList.add('content');
-            container.appendChild(grid);
+                let item = document.getElementsByClassName('content');
+                console.log(item[i]);
+               // container.remove(item[i]);
+                console.log("after" + item[i]);
+                
+            }
+            for(let i =0;i<numsquares;i++)
+            {
+                for(let i =0;i<numsquares;i++)
+                {
+                const grid = document.createElement("div");
+                grid.classList.add('content');
+                container.appendChild(grid);
+                }
+            }
+            let item = document.getElementsByClassName('content');
+
+            for(let i =0;i<item.length;i++)
+            {
+                item[i].addEventListener("mouseover", event => {
+                item[i].classList.add('color');
+                });
             }
         }
-        let item = document.getElementsByClassName('content');
+        
 
-        for(let i =0;i<item.length;i++)
-        {
-            item[i].addEventListener("mouseover", event => {
-            item[i].classList.add('color');
-            });
-        }
         
     
 
